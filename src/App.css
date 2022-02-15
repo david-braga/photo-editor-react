@@ -31,8 +31,44 @@ body {
 
   .sidebar {
     grid-area: sidebar;
-    background-color: rgb(20, 209, 121);
+    background-color: rgba(102, 178, 212, 0.787);
+    border-left: 1px solid rgba(59, 162, 209, 0.671);
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
   }
+
+  .sidebar-item {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background-color: rgba(102, 178, 212, 0.787);
+    padding: 1rem;
+    position: relative;
+    transition: background-color 150ms;
+  }
+
+  .sidebar-item:hover, .side-item:focus {
+    background-color: rgb(130, 188, 202);
+  }
+
+  .sidebar-item.active {
+    background-color: rgba(96, 162, 192, 0.787);
+  }
+
+  .sidebar-item::after {
+    content: '';
+    position: absoulte;
+    width: 80%;
+    left: 10%;
+    bottom: 0;
+    height: 1px;
+    background-color: white
+  }
+
+.sidebar-item:last-child::after {
+  display: none;
+}
 
   .slider-container {
     grid-area: slider;
